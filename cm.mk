@@ -19,6 +19,6 @@ TARGET_SCREEN_WIDTH := 1080
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := m2note
 PRODUCT_NAME := cm_m2note
-PRODUCT_BRAND := meizu
-PRODUCT_MODEL := meizu m2 note
-PRODUCT_MANUFACTURER := meizu
+PRODUCT_BRAND := MEIZU
+PRODUCT_MODEL := M2 Note
+PRODUCT_MANUFACTURER := MEIZU
