@@ -10,7 +10,7 @@ $(call inherit-product, vendor/meizu/m2note/m2note-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/meizu/m2note/overlay
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := m2note,k01ts_a
+TARGET_OTA_ASSERT_DEVICE := m2note,m571,m2n,Blue Charm Note 2
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/meizu/m2note/prebuilt/kernel
