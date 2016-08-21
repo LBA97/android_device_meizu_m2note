@@ -12,12 +12,6 @@ DEVICE_PACKAGE_OVERLAYS += device/meizu/m2note/overlay
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := m2note,m571,m2n,Blue Charm Note 2
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/meizu/m2note/prebuilt/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 # init.rc's
 PRODUCT_COPY_FILES += \
 	device/meizu/m2note/rootdir/init.mt6735.rc:root/init.mt6735.rc \
