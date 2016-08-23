@@ -71,5 +71,8 @@ ro.sf.lcd_density=480
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
 
+# fix for LTE/mobile data on both SIMs
+persist.radio.mobile.data=0,0
+
 #hchua add for CTA
 dalvik.vm.checkjni=false
