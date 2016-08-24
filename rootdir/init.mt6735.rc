@@ -78,6 +78,8 @@ on fs
 #   mount iso9660 loop@/system/etc/iAmCdRom.iso /mnt/cd-rom ro
 
 on post-fs
+    chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/nvram
+    chown root system /dev/block/platform/mtk-msdc.0/by-name/nvram
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
 
@@ -616,6 +618,8 @@ on boot
 
     # xlog
     start xlogboot
+    
+    chmod 0444 /proc/cmdline
 
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
