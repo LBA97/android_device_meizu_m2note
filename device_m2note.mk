@@ -20,7 +20,6 @@ PRODUCT_COPY_FILES += \
 	device/meizu/m2note/rootdir/init.rc:root/init.rc \
 	device/meizu/m2note/rootdir/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
 	device/meizu/m2note/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
-	device/meizu/m2note/rootdir/init.aee.rc:root/init.aee.rc \
 	device/meizu/m2note/rootdir/init.project.rc:root/init.project.rc \
 	device/meizu/m2note/rootdir/init.modem.rc:root/init.modem.rc \
 	device/meizu/m2note/recovery/root/fstab.mt6753:root/fstab.mt6735  \
