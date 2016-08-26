@@ -32,7 +32,7 @@ on early-init
 on init
     sysclktz 0
 
-loglevel 5
+loglevel 1
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -190,10 +190,10 @@ on post-fs-data
     chmod 0771 /persist
 
     # create basic filesystem structure
-    #mkdir /data/nvram 0770 root system
+    #mkdir /data/nvram 2770 root system
 	# We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
-    chmod 0770 /nvdata
+    chmod 2770 /nvdata
     symlink /nvdata /data/nvram
 
     # Set SELinux security contexts on upgrade or policy update.
@@ -299,7 +299,7 @@ on post-fs-data
     chown root system /dev/sec
 
     # device info interface
-    chmod 0440 /dev/devmap
+    chmod 0770 /dev/devmap
     chown root system /dev/devmap
 
 

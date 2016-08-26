@@ -235,17 +235,6 @@ service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/
     class late_start
     disabled
 
-# FLYME_BEGIN
-# FUNCTION:protect files. writed by chenwenjun
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated  .@meizu_protbox@ 1000
-    class late_start
-    socket sdcard stream 0660 media_rw system 
-# FLYME_END 2015.05.12
-
-#
-# Connectivity related services (Begin)
-#
-
 service atci_service /system/bin/atci_service
 	socket atci-service stream 660 radio system
 	socket atci-serv-fw stream 660 radio system

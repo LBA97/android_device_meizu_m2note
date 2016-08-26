@@ -27,9 +27,7 @@ on init
     mkdir /storage/sdcard1 0700 root root
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
-    # liuyongjie@shell.feature.app2sd.add app2sd feature for devices supported SDcard @{
     export SECONDARY_STORAGE /storage/sdcard1
-    # @}
 
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
