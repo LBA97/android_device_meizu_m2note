@@ -7,6 +7,12 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/meizu/m2note/device_m2note.mk)
 
+# Include generic Mediatek MT6753 part
+$(call inherit-product, device/mediatek/mt6753_common/BoardConfigMT6753_common.mk)
+
+# Include TWRP part
+$(call inherit-product, device/meizu/m2note/twrp.mk)
+
 # Configure dalvik heap
 # $(call inherit-product, frameworks/native/build/phone-xxxhdpi-2048-dalvik-heap.mk)
 
