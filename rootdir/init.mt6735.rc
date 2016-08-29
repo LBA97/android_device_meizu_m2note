@@ -762,7 +762,7 @@ service start_modem /system/bin/md_ctrl 1
 on property:persist.uartconsole.enable=1
     write /proc/mtprintk 1
 
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 /mnt/media_rw/usbotg /storage/usbotg
     class late_start
     disabled
 
