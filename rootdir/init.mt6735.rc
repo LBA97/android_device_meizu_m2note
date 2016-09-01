@@ -1061,6 +1061,7 @@ service memsicd3416x /system/bin/memsicd3416x
 	 user system
     group system
     class main
+
 service akmd8975 /system/bin/akmd8975
     disabled
     user system
@@ -1078,6 +1079,7 @@ service akmd09911 /system/bin/akmd09911
     user system
     group system
     class main
+
 service bmm050d /system/bin/bmm050d
     disabled
     user system
@@ -1089,11 +1091,13 @@ service bmm056d /system/bin/bmm056d
     user system
     group system
     class main
+
 service mc6420d /system/bin/mc6420d
     disabled
     user system
     group system
     class main
+
 service qmc5983d /system/bin/qmc5983d
      disabled
 	 user system
@@ -1105,6 +1109,7 @@ service orientationd /system/bin/orientationd
     user system
     group system input
     class main
+
 service AcdApiDaemon /system/bin/AcdApiDaemon
     disabled
     user system
