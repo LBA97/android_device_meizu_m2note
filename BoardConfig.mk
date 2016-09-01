@@ -42,6 +42,3 @@ BOARD_EGL_CFG := device/meizu/m2note/configs/egl.cfg
 #TARGET_RECOVERY_INITRC := device/meizu/m2note/recovery/init.mt6753.rc
 TARGET_RECOVERY_FSTAB := device/meizu/m2note/recovery/root/fstab.mt6753
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
-
-# Hack for build
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
