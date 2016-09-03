@@ -168,7 +168,6 @@ persist.radio.mobile.data=0,0
 
 # temp nav bar
 qemu.hw.mainkeys=0
-ro.sf.hwrotation=180
 
 # OTA
 # cm.updater.uri=https://ota.cm.mkoas.de/api
