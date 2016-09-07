@@ -73,28 +73,12 @@ dalvik.vm.checkjni=false
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
-ro.carrier=unknown
-# persist.sys.timezone=Asia/Shanghai
-# persist.sys.meizu.region=cn
-# persist.sys.meizu.codepage=gbk
-# ro.meizu.setupwizard.flyme=true
-# ro.meizu.setupwizard.setlang=true
-# ro.meizu.region.enable=true
-# ro.meizu.contactmsg.auth=false
-# ro.meizu.customize.pccw=false
-# ro.meizu.autorecorder=true
-# ro.meizu.visualvoicemail=true
-# ro.meizu.security=false
-# ro.meizu.permanentkey=false
-# ro.meizu.sip.support=true
-# ro.meizu.voip.support=false
+
+# RIL
+ro.telephony.ril_class=MediaTekRIL
+ro.telephony.ril.config=fakeiccid
 sys.meizu.m35x.white.config=false
 sys.meizu.white.config=false
-persist.sys.log-main.enable=0
-persist.sys.log-system.enable=0
-persist.sys.log-events.enable=0
-persist.sys.log-radio.enable=0
-#persist.sys.use.flyme.icon=true
 keyguard.no_require_sim=true
 persist.sys.keyguard_intercept=true
 persist.sys.disable_blur_view=true
@@ -129,7 +113,6 @@ fmradio.driver.enable=0
 ril.first.md=1
 ril.flightmode.poweroffMD=0
 ril.telephony.mode=0
-dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
 mediatek.wlan.chip=CONSYS_MT6735
 mediatek.wlan.module.postfix=_consys_mt6735
 ril.radiooff.poweroffMD=0
@@ -192,7 +175,6 @@ ro.mtk_live_photo_support=1
 ro.mtk_motion_track_support=1
 ro.mtk_bg_power_saving_support=1
 ro.mtk_bg_power_saving_ui=1
-# ro.have_aee_feature=1
 ro.sim_me_lock_mode=0
 wfd.dummy.enable=1
 ro.mediatek.project.path=device/meizu/meizu6753_65cn_l1
@@ -204,7 +186,6 @@ persist.radio.mobile.enable=1,1
 persist.meta.dumpdata=0
 ro.mtk_hetcomm_support=1
 persist.power.usetwilightadj=true
-debug.hwui.render_dirty_regions=true
 ro.hwui.disable_asset_atlas=true
 ro.hwui.texture_cache_size=48
 ro.hwui.layer_cache_size=32
@@ -227,13 +208,7 @@ persist.dialpad.volume=100
 persist.dialpad.ecc.volume=100
 persist.dtmf.volume=90
 persist.call.waiting.volume=70
-ro.meizu.carrier.model=M571H
-persist.sys.dalvik.vm.lib.2=libart.so
-dalvik.vm.isa.arm64.features=default
-dalvik.vm.isa.arm.features=default
-dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
-dalvik.vm.stack-trace-file=/data/anr/traces.txt
 
 ro.kernel.android.checkjni=0
 persist.call_recording.enabled=true
