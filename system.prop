@@ -30,8 +30,6 @@ wifi.tethering.interface=ap0
 ro.opengles.version=196608
 
 wifi.direct.interface=p2p0
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
@@ -52,8 +50,11 @@ ro.camera.sound.forced=0
 ro.audio.silent=0
 
 ro.zygote.preload.enable=0
-
 ro.kernel.zio=38,108,105,16
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+ro.kernel.android.checkjni=0
+dalvik.vm.checkjni=false
 #ro.kernel.qemu=1
 #ro.kernel.qemu.gles=0
 #ro.boot.selinux=disable
@@ -61,49 +62,58 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
+# temp nav bar
+qemu.hw.mainkeys=0
 ro.sf.lcd_density=440
+ro.sf.hwrotation=180
 
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
-
-#hchua add for CTA
-dalvik.vm.checkjni=false
-
-#
-# ADDITIONAL_BUILD_PROPERTIES
-#
+ro.mtk_benchmark_boost_tp=1
 
 # RIL
 ro.telephony.ril_class=MediaTekRIL
 ro.telephony.ril.config=fakeiccid
-sys.meizu.m35x.white.config=false
-sys.meizu.white.config=false
-keyguard.no_require_sim=true
-persist.sys.keyguard_intercept=true
-persist.sys.disable_blur_view=true
-persist.sys.static_blur_mode=false
-ro.meizu.published.type=prd
-ro.mediatek.cmcc.oompolicy=1
-ro.mediatek.chip_ver=S01
-ro.mediatek.version.release=ALPS.L1.MP3.V2.95_MEIZU6753.65CN.L1
-ro.mediatek.platform=MT6735
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
+persist.radio.mobile.data=0,0
+persist.radio.mobile.enable=1,1
 persist.radio.multisim.config=dsds
-ro.mtk_benchmark_boost_tp=1
-persist.md.perm.checked=to_upgrade
+ro.mtk_gemini_support=1
 persist.gemini.sim_num=2
 ro.gemini.smart_sim_switch=false
 ril.specific.sm_cause=0
 bgw.current3gband=0
+ril.current.share_modem=2
+ro.mediatek.gemini_support=true
 ril.external.md=0
+
+persist.call_recording.enabled=true
+persist.call_recording.src=1
+keyguard.no_require_sim=true
+persist.sys.keyguard_intercept=true
+persist.sys.disable_blur_view=true
+persist.sys.static_blur_mode=false
+
+ro.meizu.published.type=prd
+ro.mediatek.cmcc.oompolicy=1
+ro.mediatek.chip_ver=S01
+ro.mediatek.platform=MT6735
+persist.radio.multisim.config=dsdsro.mediatek.platform=MT6735
+ro.mediatek.version.release=ALPS.L1.MP3.V2.95_MEIZU6753.65CN.L1
+mediatek.wlan.chip=CONSYS_MT6735
+mediatek.wlan.module.postfix=_consys_mt6735
+ro.mediatek.version.branch=L1.MP3.EE.WFC.DEV
+ro.mediatek.project.path=device/meizu/meizu6753_65cn_l1
+ro.product.perf.config=M81-l1_base
+
+
+persist.md.perm.checked=to_upgrade
 ro.mtk_cam_lomo_support=1
 ro.btstack=blueangel
-ro.sf.hwrotation=180
-ril.current.share_modem=2
+
 curlockscreen=1
-ro.mediatek.gemini_support=true
 persist.radio.fd.counter=15
 persist.radio.fd.off.counter=5
 persist.radio.fd.r8.counter=15
@@ -113,12 +123,8 @@ fmradio.driver.enable=0
 ril.first.md=1
 ril.flightmode.poweroffMD=0
 ril.telephony.mode=0
-mediatek.wlan.chip=CONSYS_MT6735
-mediatek.wlan.module.postfix=_consys_mt6735
 ril.radiooff.poweroffMD=0
-ro.mediatek.version.branch=L1.MP3.EE.WFC.DEV
 ro.mediatek.version.sdk=4
-ro.mtk_gemini_support=1
 ro.mtk_audenh_support=1
 ro.mtk_lossless_bt_audio=1
 ro.mtk_besloudness_support=1
@@ -177,12 +183,11 @@ ro.mtk_bg_power_saving_support=1
 ro.mtk_bg_power_saving_ui=1
 ro.sim_me_lock_mode=0
 wfd.dummy.enable=1
-ro.mediatek.project.path=device/meizu/meizu6753_65cn_l1
+
 persist.mtk.wcn.combo.chipid=-1
 service.wcn.driver.ready=no
 ro.com.android.mobiledata=false
-persist.radio.mobile.data=0,0
-persist.radio.mobile.enable=1,1
+
 persist.meta.dumpdata=0
 ro.mtk_hetcomm_support=1
 persist.power.usetwilightadj=true
@@ -201,21 +206,12 @@ ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
 persist.sys.memopt.switch=1
 persist.perf.wm_static_blur=true
-ro.product.perf.config=M81-l1_base
+
 persist.sf.max_buffer_count=4
 persist.sf.startingwindow.gles=1
-persist.dialpad.volume=100
-persist.dialpad.ecc.volume=100
+
 persist.dtmf.volume=90
-persist.call.waiting.volume=70
 net.bt.name=Android
-
-ro.kernel.android.checkjni=0
-persist.call_recording.enabled=true
-persist.call_recording.src=1
-
-# temp nav bar
-qemu.hw.mainkeys=0
 
 
 # OTA
