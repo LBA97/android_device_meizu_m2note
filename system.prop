@@ -78,7 +78,6 @@ ro.telephony.ril.config=fakeiccid
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
 persist.radio.mobile.data=0,0
-persist.radio.mobile.enable=1,1
 persist.radio.multisim.config=dsds
 ro.mtk_gemini_support=1
 persist.gemini.sim_num=2
@@ -100,7 +99,6 @@ ro.meizu.published.type=prd
 ro.mediatek.cmcc.oompolicy=1
 ro.mediatek.chip_ver=S01
 ro.mediatek.platform=MT6735
-persist.radio.multisim.config=dsdsro.mediatek.platform=MT6735
 ro.mediatek.version.release=ALPS.L1.MP3.V2.95_MEIZU6753.65CN.L1
 mediatek.wlan.chip=CONSYS_MT6735
 mediatek.wlan.module.postfix=_consys_mt6735
