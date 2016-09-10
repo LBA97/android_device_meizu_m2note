@@ -49,7 +49,6 @@ on init
 
 on charger
     mount ext4 /dev/block/platform/mtk-msdc.0/by-name/system /system ro wait
-    start fuelgauged
     start kpoc_charger
     start servicemanager
 
@@ -1160,6 +1159,7 @@ service fuelgauged /system/bin/fuelgauged
     class main
     user system
     group system
+    disabled
 
 service MtkCodecService /system/bin/MtkCodecService
     class main
