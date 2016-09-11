@@ -52,6 +52,10 @@ subsystem adf
     chown gps gps /dev/stpgps
     chmod 0660 /dev/stpgps
 
+    chmod 0660 /dev/ttyC2
+    chown system gps /dev/ttyC2
+
+
 /dev/stpwmt              0660  system      system
 /dev/wmtdetect           0660  system      system
 /dev/stpbt               0660  bluetooth   radio
