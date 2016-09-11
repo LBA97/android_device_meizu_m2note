@@ -54,7 +54,7 @@ debug.hwui.render_dirty_regions=false
 
 # temp nav bar
 qemu.hw.mainkeys=1
-ro.sf.lcd_density=440
+ro.sf.lcd_density=480
 ro.sf.hwrotation=180
 
 # performance
