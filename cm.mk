@@ -14,10 +14,10 @@ $(call inherit-product, device/mediatek/mt6753_common/BoardConfigMT6753_common.m
 $(call inherit-product, device/meizu/m2note/twrp.mk)
 
 # Configure dalvik heap
-# $(call inherit-product, frameworks/native/build/phone-xxxhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
 # Configure hwui memory
-# $(call inherit-product, frameworks/native/build/phone-xxxhdpi-2048-hwui-memory.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
