@@ -648,15 +648,3 @@ service pre-recovery /system/bin/uncrypt
     disabled
     oneshot
 
-# FLYME:mingguilai@Feature.Netdiagn {@
-on post-fs-data
-    # netdiagn socket server and client
-    mkdir /data/misc/vbus 0750 system system
-    mkdir /data/misc/vbus/sockets 0750 system system
-
-service netdiagn /system/bin/netdiagn -p/data/misc/vbus -ibus0
-    class main
-    socket netdiagn dgram 0660 system system
-    disabled
-    oneshot
-# @}

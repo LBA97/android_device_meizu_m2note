@@ -26,10 +26,10 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
-ro.sys.usb.storage.type=mtp,mass_storage
+ro.sys.usb.storage.type=mtp
 
 # USB BICR function
-ro.sys.usb.bicr=yes
+ro.sys.usb.bicr=no
 
 # USB Charge only function
 # ro.sys.usb.charging.only=yes
@@ -41,8 +41,6 @@ persist.audio.dirac.speaker=true
 
 ro.zygote.preload.enable=0
 ro.kernel.zio=38,108,105,16
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
 ro.kernel.android.checkjni=0
 dalvik.vm.checkjni=false
 #ro.kernel.qemu=1
