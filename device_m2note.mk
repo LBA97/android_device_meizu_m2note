@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES += \
 
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
-        persist.sys.isUsbOtgEnabled=true \
     	dalvik.vm.boot-dex2oat-threads=4 \
     	dalvik.vm.dex2oat-threads=2 \
     	dalvik.vm.image-dex2oat-threads=4
