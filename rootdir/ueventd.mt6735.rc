@@ -68,9 +68,6 @@ subsystem adf
 
 /dev/wmtWifi             0660  system      system
 
-# FMRadio
-/dev/fm			 0660  system	   media
-
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
 /dev/ttyUSB0              0660   radio      radio
