@@ -473,20 +473,6 @@ service nvram_daemon /system/bin/nvram_daemon
     group system
     oneshot
 
-service mdlogger /system/bin/mdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet
-    disabled
-    oneshot
-    
-service dualmdlogger /system/bin/dualmdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet
-    disabled
-    oneshot
-
 service installd /system/bin/installd
     class main
     socket installd stream 600 system system

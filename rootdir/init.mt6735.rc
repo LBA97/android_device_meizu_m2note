@@ -19,7 +19,7 @@ on init
     #create mountpoint for persist partition
     mkdir /persist 0771 system system
 #Create nvdata mount point
-    mkdir /nvdata 0777 system system
+    mkdir /nvdata 0771 system system
 
 # Temp Backward compatibility
     symlink /dev/block/platform/mtk-msdc.0/by-name/boot /dev/bootimg 
@@ -118,7 +118,7 @@ on post-fs-data
     # mkdir /data/nvram 2770 root system
     # We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
-    chmod 2777 /nvdata
+    chmod 2770 /nvdata
     symlink /nvdata /data/nvram
 
     # Set SELinux security contexts on upgrade or policy update.
@@ -447,16 +447,11 @@ on post-fs-data
     chmod 0660 /dev/sec
     chown root system /dev/sec
 
-    # FM Radio device node
-    mknod /dev/fm     c 193 0;
-    chmod 0660 /dev/fm
-    chown system media /dev/fm
-
     # device apc settings
 
     # device info /proc interface
     mknod /dev/devmap c 196 0;
-    chmod 0777 /dev/devmap
+    chmod 0440 /dev/devmap
     chown root system /dev/devmap
 
     # BT relayer mode used VCOM
@@ -492,15 +487,15 @@ on post-fs-data
     chmod 0444 /dev/mtk_disp
 
     #Camera
-    chmod 0666 /dev/camera-sysram
-    chmod 0666 /dev/camera-isp
-    chmod 0666 /dev/camera-fdvt
-    chmod 0666 /dev/camera-pipemgr
-    chmod 0666 /dev/kd_camera_hw
-    chmod 0666 /dev/kd_camera_flashlight
-    chmod 0666 /dev/kd_camera_hw_bus2
-    chmod 0666 /dev/FM50AF
-    chmod 0666 /dev/CAM_CAL_DRV
+    chmod 0660 /dev/camera-sysram
+    chmod 0660 /dev/camera-isp
+    chmod 0660 /dev/camera-fdvt
+    chmod 0660 /dev/camera-pipemgr
+    chmod 0660 /dev/kd_camera_hw
+    chmod 0660 /dev/kd_camera_flashlight
+    chmod 0660 /dev/kd_camera_hw_bus2
+    chmod 0660 /dev/FM50AF
+    chmod 0660 /dev/CAM_CAL_DRV
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -546,7 +541,7 @@ on post-fs-data
     chmod 0640 /mtd@recovery
     chown root system /mtd@recovery
 
-    chmod 0777 /mtd@nvram
+    chmod 0660 /mtd@nvram
     chown root system /mtd@nvram
 
     chmod 0660 /mtd@seccfg
@@ -900,15 +895,15 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
 
 service iprenew_wlan0 /system/bin/dhcpcd -n
     class main
-	user dhcp
-	group net_admin net_raw
+    user dhcp
+    group net_admin net_raw
     disabled
     oneshot
 
 service iprenew_p2p /system/bin/dhcpcd -n
     class main
-	user dhcp
-	group net_admin net_raw
+    user dhcp
+    group net_admin net_raw
     disabled
     oneshot
 
@@ -927,8 +922,8 @@ service dhcpv6_inform /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cSIP.conf" -f
     oneshot
 
 service dhcp6cDNS_wlan0 /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cDNS.conf" -f wlan0
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service dhcp6c_wlan0 /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6c.conf" -f wlan0
     disabled
@@ -941,8 +936,8 @@ on property:service.dhcp6c_wlan0.enable=1
     start dhcp6c_wlan0
 
 service dhcp6c_PD /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cPD.conf" -f
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 # write proc for test sim
     on property:gsm.sim.ril.testsim=0
@@ -1202,34 +1197,3 @@ setprop persist.radio.reset_on_switch true
 setprop rild.mark_switchuser 0
 #end
 
-chown root /system/bin/pppd
-chmod 4755 /system/bin/pppd
-
-#
-#ril-daemon (begin)
-#
-service ril-3gddaemon /system/bin/rild_dongle
-    class main
-    socket rild-dongle stream 660 root radio
-    socket rild-dongle-debug stream 660 radio radio
-    user root
-    group radio cache inet misc audio log
-    disabled
-
-#
-#ril-daemon (end)
-#
-
-#
-#usbdongled(begin)
-#
-service usbdongled /system/bin/dongled
-    class main
-	user root
-	group radio cache inet misc
-	enabled
-
-
-#
-#usbdongled(end)
-#
