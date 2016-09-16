@@ -70,7 +70,7 @@ on fs
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/proinfo
     exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/otp
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/otp
-    exec /system/bin/chmod 0777 /dev/block/platform/mtk-msdc.0/by-name/nvram
+    exec /system/bin/chmod 0771 /dev/block/platform/mtk-msdc.0/by-name/nvram
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/nvram
     exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/para
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/para
@@ -754,7 +754,7 @@ service start_modem /system/bin/md_ctrl 1
 on property:persist.uartconsole.enable=1
     write /proc/mtprintk 1
 
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 /mnt/media_rw/usbotg /storage/usbotg
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
     class late_start
     disabled
 

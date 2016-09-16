@@ -27,6 +27,7 @@ ro.sys.usb.mtp.whql.enable=0
 sys.ipo.pwrdncap=2
 
 ro.sys.usb.storage.type=mtp
+persist.sys.isUsbOtgEnabled=true
 
 # USB BICR function
 ro.sys.usb.bicr=no
