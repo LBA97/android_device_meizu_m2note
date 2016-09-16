@@ -3,8 +3,8 @@ $(call inherit-product, vendor/meizu/m2note/m2note-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/meizu/m2note/overlay
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
+# Device uses AAPT_PREF and fallback to AAPT_CONF (xxhdpi > normal)
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
