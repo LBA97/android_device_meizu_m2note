@@ -18,7 +18,7 @@
     <!-- Label for the Flyme system components when they are shown to the user. -->
     <string name="flyme_system_label">Flyme System</string>
 
-    <string name="gesture_control_path_string">/sys/devices/mx_tsp/gesture_control</string>
-    <string name="gesture_data_path_string">/sys/devices/mx_tsp/gesture_data</string>
+    <string name="gesture_control_path_string">/sys/devices/platform/mx-gs/gesture_control</string>
+    <string name="gesture_data_path_string">/sys/devices/platform/mx-gs/gesture_data</string>
 
 </resources>
