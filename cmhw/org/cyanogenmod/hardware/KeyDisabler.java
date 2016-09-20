@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.internal.util.FileUtils;
-
+import android.util.Log;
 /*
  * Disable capacitive keys
  *
@@ -29,17 +28,31 @@ import org.cyanogenmod.internal.util.FileUtils;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "/proc/touchpanel/keypad_enable";
+    private static boolean isActive = false;
+    /*
+     * All HAF classes should export this boolean.
+     * Real implementations must, of course, return true
+     */
 
-    public static boolean isSupported() {
-        return FileUtils.isFileWritable(CONTROL_PATH);
-    }
+    public static boolean isSupported() { return true; }
+
+    /*
+     * Are the keys currently blocked?
+     */
 
     public static boolean isActive() {
-        return FileUtils.readOneLine(CONTROL_PATH).equals("0");
+        return isActive;
     }
 
+    /*
+     * Disable capacitive keys
+     */
+
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
+        //throw new UnsupportedOperationException();
+        isActive = state;
+        Log.i("KeyDisabler", "setActive " + state);
+        return isActive;
     }
+
 }
