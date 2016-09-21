@@ -10,6 +10,16 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := m2note,m571,m2n,meizu6753_65c_l1
 
+# Keyhandlers and gestures
+PRODUCT_PACKAGES += \
+    CMActions \
+    com.cyanogenmod.keyhandler
+
+PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+
+# never dexopt the keyhandler
+$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
 # init.rc's
 PRODUCT_COPY_FILES += \
 	device/meizu/m2note/rootdir/init.mt6735.rc:root/init.mt6735.rc \
