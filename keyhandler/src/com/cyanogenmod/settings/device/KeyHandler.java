@@ -74,17 +74,17 @@ public class KeyHandler implements DeviceKeyHandler {
             "com.android.keyguard.action.DISMISS_KEYGUARD_SECURELY";
 
     // Supported scancodes
-    private static final int KEY_DOUBLE_TAP = 623;
-    private static final int GESTURE_C_SCANCODE = 612;
-    private static final int GESTURE_Z_SCANCODE = 622;
-    private static final int GESTURE_DOWN_SCANCODE = 610;
-    private static final int GESTURE_LTR_SCANCODE = 608;
-    private static final int GESTURE_GTR_SCANCODE = 609;
+    private static final int KEY_DOUBLE_TAP = 160;
+    private static final int GESTURE_C_SCANCODE = 193;
+    private static final int GESTURE_Z_SCANCODE = 202;
+    private static final int GESTURE_DOWN_SCANCODE = 179;
+    private static final int GESTURE_LTR_SCANCODE = 176;
+    private static final int GESTURE_GTR_SCANCODE = 177;
     private static final int MODE_MUTE = 614; //M
     private static final int MODE_DO_NOT_DISTURB = 616; //S
-    private static final int MODE_NORMAL = 621; //W
+    private static final int MODE_NORMAL = 194; //W
 
-    private static final int GESTURE_FPC_TAP_SCANCODE = 189;
+    private static final int GESTURE_FPC_TAP_SCANCODE = 102;
     private static final int GESTURE_FPC_LEFT_SCANCODE = 191;
     private static final int GESTURE_FPC_RIGHT_SCANCODE = 190;
 
