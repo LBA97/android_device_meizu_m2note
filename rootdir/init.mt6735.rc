@@ -852,6 +852,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
 # For WiFi High Speed calibration
 service autokd /system/bin/autokd
     class core
@@ -870,19 +871,17 @@ service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     disabled
     oneshot
 
-
-
 service dhcpcd_wlan0 /system/bin/dhcpcd -aABKL
     class main
-	user root
-	group net_admin net_raw
+    user root
+    group net_admin net_raw
     disabled
     oneshot
 
 service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     class main
-	user root
-	group net_admin net_raw
+    user root
+    group net_admin net_raw
     disabled
     oneshot
 
