@@ -42,11 +42,6 @@
     <string name="touchscreen_ydown_gesture_title">Flashlight</string>
     <string name="touchscreen_ydown_gesture_summary">Draw a vertical line down to activate Flashlight</string>
 
-    <string name="fpc_gesture_title">Fingerprint Sensor Gestures</string>
-    <string name="fpc_gesture_tap_summary">Tap once to Back</string>
-    <string name="fpc_gesture_left_summary">Swipe left for Menu</string>
-    <string name="fpc_gesture_right_summary">Swipe right for Recent Apps</string>
-
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Extras</string>
     <string name="haptic_feedback">Haptic feedback</string>

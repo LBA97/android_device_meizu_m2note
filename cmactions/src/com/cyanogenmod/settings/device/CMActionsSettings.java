@@ -43,11 +43,6 @@ public class CMActionsSettings {
     public static final String TOUCHSCREEN_W_GESTURE_KEY = "touchscreen_gesture_w";
     public static final String TOUCHSCREEN_M_GESTURE_KEY = "touchscreen_gesture_m";
     public static final String TOUCHSCREEN_YDOWN_GESTURE_KEY = "touchscreen_gesture_ydown";
-
-    public static final String FPC_GESTURE_TAP_KEY = "fpc_gesture_tap";
-    public static final String FPC_GESTURE_LEFT_GESTURE_KEY = "fpc_gesture_left";
-    public static final String FPC_GESTURE_RIGHT_KEY = "fpc_gesture_right";
-
     public static final String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK =
             "touchscreen_gesture_haptic_feedback";
 

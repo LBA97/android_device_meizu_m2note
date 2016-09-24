@@ -60,12 +60,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final String KEY_GESTURE_HAPTIC_FEEDBACK =
             "touchscreen_gesture_haptic_feedback";
-    private static final String KEY_FPC_TAP =
-            "fpc_gesture_tap";
-    private static final String KEY_FPC_LEFT =
-            "fpc_gesture_left";
-    private static final String KEY_FPC_RIGHT =
-            "fpc_gesture_right";
 
     private static final String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK =
             "touchscreen_gesture_haptic_feedback";
@@ -84,10 +78,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int MODE_DO_NOT_DISTURB = 616; //S
     private static final int MODE_NORMAL = 194; //W
 
-    private static final int GESTURE_FPC_TAP_SCANCODE = 102;
-    private static final int GESTURE_FPC_LEFT_SCANCODE = 191;
-    private static final int GESTURE_FPC_RIGHT_SCANCODE = 190;
-
     private static final int GESTURE_WAKELOCK_DURATION = 3000;
 
     private static final int[] sSupportedGestures = new int[] {
@@ -99,10 +89,7 @@ public class KeyHandler implements DeviceKeyHandler {
         GESTURE_GTR_SCANCODE,
         MODE_MUTE,
         MODE_DO_NOT_DISTURB,
-        MODE_NORMAL,
-        GESTURE_FPC_TAP_SCANCODE,
-        GESTURE_FPC_LEFT_SCANCODE,
-        GESTURE_FPC_RIGHT_SCANCODE
+        MODE_NORMAL
     };
 
     private final Context mContext;
@@ -190,18 +177,6 @@ public class KeyHandler implements DeviceKeyHandler {
                 Intent intent = new Intent(action, null);
                 startActivitySafely(intent);
                 doHapticFeedback();
-                break;
-            case GESTURE_FPC_LEFT_SCANCODE:
-                if(getCMApref(KEY_FPC_LEFT, false)) {
-                    m_Instrumentation.sendKeyDownUpSync( KeyEvent.KEYCODE_MENU );
-                    doHapticFeedback();
-                }
-                break;
-            case GESTURE_FPC_RIGHT_SCANCODE:
-                if(getCMApref(KEY_FPC_RIGHT, false)) {
-                    m_Instrumentation.sendKeyDownUpSync( KeyEvent.KEYCODE_APP_SWITCH );
-                    doHapticFeedback();
-                }
                 break;
             case GESTURE_Z_SCANCODE:
                 dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);

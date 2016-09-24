@@ -42,11 +42,6 @@
     <string name="touchscreen_ydown_gesture_title">Фонарик</string>
     <string name="touchscreen_ydown_gesture_summary">Нарисуйте вертикальную черту для активации фонарика</string>
 
-    <string name="fpc_gesture_title">Жесты кнопки сенсора</string>
-    <string name="fpc_gesture_tap_summary">Одиночный тап для возврата</string>
-    <string name="fpc_gesture_left_summary">Свайп влево для вызова меню</string>
-    <string name="fpc_gesture_right_summary">Свайп вправо для вызова недавних приложений</string>
-
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Дополнительные настройки</string>
     <string name="haptic_feedback">Вибрация</string>

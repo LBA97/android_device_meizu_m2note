@@ -17,20 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="fpc_gestures"
-        android:title="@string/fpc_gesture_title" >
-
-    <SwitchPreference
-            android:key="fpc_gesture_left"
-            android:title="@string/fpc_gesture_left_summary" />
-
-    <SwitchPreference
-            android:key="fpc_gesture_right"
-            android:title="@string/fpc_gesture_right_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/touchscreen_control_gesture_head" >
 
     <SwitchPreference

@@ -16,10 +16,7 @@
 
 package org.cyanogenmod.hardware;
 
-import java.io.File;
-
-import org.cyanogenmod.hardware.util.FileUtils;
-
+import android.util.Log;
 /*
  * Disable capacitive keys
  *
@@ -31,17 +28,31 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "/proc/nav_switch";
+    private static boolean isActive = false;
+    /*
+     * All HAF classes should export this boolean.
+     * Real implementations must, of course, return true
+     */
 
-    public static boolean isSupported() {
-        return new File(CONTROL_PATH).exists();
-    }
+    public static boolean isSupported() { return true; }
+
+    /*
+     * Are the keys currently blocked?
+     */
 
     public static boolean isActive() {
-        return (FileUtils.readOneLine(CONTROL_PATH).contains(":0"));
+        return isActive;
     }
 
+    /*
+     * Disable capacitive keys
+     */
+
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "2"));
+        //throw new UnsupportedOperationException();
+        isActive = state;
+        Log.i("KeyDisabler", "setActive " + state);
+        return isActive;
     }
+
 }
