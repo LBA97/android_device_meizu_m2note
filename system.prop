@@ -34,7 +34,7 @@ ro.sys.usb.storage.type=mtp
 ro.sys.usb.bicr=no
 
 # USB Charge only function
-# ro.sys.usb.charging.only=yes
+ro.sys.usb.charging.only=no
 
 # audio
 ro.camera.sound.forced=0
@@ -53,7 +53,6 @@ dalvik.vm.checkjni=false
 debug.hwui.render_dirty_regions=false
 
 # temp nav bar
-#qemu.hw.mainkeys=1
 ro.sf.lcd_density=480
 ro.sf.hwrotation=180
 
