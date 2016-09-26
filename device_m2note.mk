@@ -41,8 +41,8 @@ PRODUCT_COPY_FILES += \
 # TWRP
 PRODUCT_COPY_FILES += device/meizu/m2note/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
-PRODUCT_COPY_FILES += \
-    	device/meizu/m2note/rootdir/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+# Hostapd
+PRODUCT_COPY_FILES += device/meizu/m2note/configs/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
 
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
