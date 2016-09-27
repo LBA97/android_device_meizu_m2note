@@ -18,15 +18,15 @@
 
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Gestes tactiles</string>
-    <string name="screen_gestures_panel_summary">Utilisez les gestes quand l'écran est éteint</string>
+    <string name="screen_gestures_panel_summary">Utilisez les gestes quand l\'écran est éteint</string>
 
     <string name="touchscreen_control_gesture_head">Gestes écran éteint</string>
     <string name="touchscreen_control_gesture_title">Activer les Gestes</string>
     <string name="gesture_category_title">Gestes disponible</string>
     <string name="touchscreen_dtp_gesture_title">Double Tape</string>
-    <string name="touchscreen_dtp_gesture_summary">Tapez deux fois pour réveiller l'appareil</string>
+    <string name="touchscreen_dtp_gesture_summary">Tapez deux fois pour réveiller l\'appareil</string>
     <string name="touchscreen_c_gesture_title">Appareil photo</string>
-    <string name="touchscreen_c_gesture_summary">Dessinez un \"C\" pour activer l'appareil photo</string>
+    <string name="touchscreen_c_gesture_summary">Dessinez un \"C\" pour activer l\'appareil photo</string>
     <string name="touchscreen_z_gesture_title">Musique</string>
     <string name="touchscreen_z_gesture_summary">Dessinez un \"Z\" pour Lecture/Pause</string>
     <string name="touchscreen_ltr_gesture_title">Musique</string>
