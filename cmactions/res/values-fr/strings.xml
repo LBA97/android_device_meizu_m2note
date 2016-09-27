@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Gesture shortcuts -->
+    <string name="screen_gestures_panel_title">Gestes tactiles</string>
+    <string name="screen_gestures_panel_summary">Utilisez les gestes quand l'écran est éteint</string>
+
+    <string name="touchscreen_control_gesture_head">Gestes écran éteint</string>
+    <string name="touchscreen_control_gesture_title">Activer les Gestes</string>
+    <string name="gesture_category_title">Gestes disponible</string>
+    <string name="touchscreen_dtp_gesture_title">Double Tape</string>
+    <string name="touchscreen_dtp_gesture_summary">Tapez deux fois pour réveiller l'appareil</string>
+    <string name="touchscreen_c_gesture_title">Appareil photo</string>
+    <string name="touchscreen_c_gesture_summary">Dessinez un \"C\" pour activer l'appareil photo</string>
+    <string name="touchscreen_z_gesture_title">Musique</string>
+    <string name="touchscreen_z_gesture_summary">Dessinez un \"Z\" pour Lecture/Pause</string>
+    <string name="touchscreen_ltr_gesture_title">Musique</string>
+    <string name="touchscreen_ltr_gesture_summary">Glissez vers la gauche pour Piste Précédente</string>
+    <string name="touchscreen_gtr_gesture_title">Musique</string>
+    <string name="touchscreen_gtr_gesture_summary">Glissez vers la droite pour Piste Suivante</string>
+    <string name="touchscreen_s_gesture_title">Notifications</string>
+    <string name="touchscreen_s_gesture_summary">Dessinez un \"S\" pour activer le mode \"Do Not Disturb\"</string>
+    <string name="touchscreen_w_gesture_title">Notifications</string>
+    <string name="touchscreen_w_gesture_summary">Dessinez un \"W\" pour activer le mode \"Normal\"</string>
+    <string name="touchscreen_m_gesture_title">Notifications</string>
+    <string name="touchscreen_m_gesture_summary">Dessinez un \"M\" pour activer le mode \"Silencieux\"</string>
+    <string name="touchscreen_ydown_gesture_title">Flashlight</string>
+    <string name="touchscreen_ydown_gesture_summary">Tracez une ligne verticale vers le bas pour activer la Torche</string>
+
+    <!-- haptic feedback  -->
+    <string name="touchscreen_extras">Extras</string>
+    <string name="haptic_feedback">Retour Haptique</string>
+    <string name="haptic_feedback_summary">Vibrer quand un geste est détecté</string>
+</resources>
