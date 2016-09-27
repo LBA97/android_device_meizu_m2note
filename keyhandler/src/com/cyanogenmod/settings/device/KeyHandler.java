@@ -112,7 +112,8 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mProximityWakeSupported;
     private Instrumentation m_Instrumentation;
     private Context cmaContext = null;
-
+    
+    private boolean isLastPressHomeButton = false;
     private boolean mNotificationSliderVibrate;
 
     public KeyHandler(Context context) {
@@ -230,19 +231,17 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
-    private boolean isLastPressHomeButton = false;
-
     public boolean handleKeyEvent(KeyEvent event) {
         boolean isHandled = false;
 
         switch (event.getScanCode()) {
             case 102: // Home button event
-                if (event.getDeviceId() == 2 && event.getAction() == KeyEvent.ACTION_DOWN) {
-                    if (isLastPressHomeButton) {
-                        isHandled = true;
-                    }
+                if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
+                        && event.getAction() == KeyEvent.ACTION_DOWN
+                        && isLastPressHomeButton) {
+                    isHandled = true;
                 }
-                isLastPressHomeButton = event.getDeviceId() == 6;
+                isLastPressHomeButton = event.getKeyCode() == KeyEvent.KEYCODE_HOME;
                 break;
             case 195: // Gesture event
                 if (event.getAction() == KeyEvent.ACTION_UP)
