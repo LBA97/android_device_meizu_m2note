@@ -140,9 +140,9 @@ on post-fs-data
     mkdir /data/misc/gps 0770 gps gps
 
     # Wifi
-    mkdir /data/misc/wifi/hostapd 0770 system wifi
-    restorecon /data/misc/wifi/hostapd
-    restorecon /data/misc/wifi/hostapd/wlan0
+    #mkdir /data/misc/wifi/hostapd 0771 system wifi
+    #restorecon /data/misc/wifi/hostapd
+    #restorecon /data/misc/wifi/hostapd/ap0
 
 
 
