@@ -22,6 +22,7 @@ import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -77,13 +78,13 @@ public class KeyHandler implements DeviceKeyHandler {
             "com.android.keyguard.action.DISMISS_KEYGUARD_SECURELY";
 
     // M2Note gesture codes
-    public static final int DOUBLE_TAP = 0xA0;
-    public static final int SWIPE_X_LEFT = 0xB0;
+    public static final int DOUBLE_TAP = 0xA0; //160
+    public static final int SWIPE_X_LEFT = 0xB0; //176
     public static final int SWIPE_X_RIGHT = 0xB1;
     public static final int SWIPE_Y_UP = 0xB2;
     public static final int SWIPE_Y_DOWN = 0xB3;
 
-    public static final int UNICODE_E = 0xC0;
+    public static final int UNICODE_E = 0xC0; // 192
     public static final int UNICODE_C = 0xC1;
     public static final int UNICODE_W = 0xC2;
     public static final int UNICODE_M = 0xC3;
@@ -104,6 +105,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private EventHandler mEventHandler;
     private SensorManager mSensorManager;
     private TorchManager mTorchManager;
+    private PackageManager mPackageManager;
     private Sensor mProximitySensor;
     private Vibrator mVibrator;
     private WakeLock mProximityWakeLock;
@@ -112,12 +114,13 @@ public class KeyHandler implements DeviceKeyHandler {
     private boolean mProximityWakeSupported;
     private Instrumentation m_Instrumentation;
     private Context cmaContext = null;
-    
+
     private boolean isLastPressHomeButton = false;
-    private boolean mNotificationSliderVibrate;
+    //private boolean mNotificationSliderVibrate;
 
     public KeyHandler(Context context) {
         mContext = context;
+        mPackageManager = context.getPackageManager();
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mEventHandler = new EventHandler();
         m_Instrumentation = new Instrumentation();
@@ -166,14 +169,22 @@ public class KeyHandler implements DeviceKeyHandler {
         @Override
         public void handleMessage(Message msg) {
             try {
+                int zenMode = 0;
                 int gestureData = (int) msg.obj;
-                Log.i(TAG, "Handling gesture: " + gestureData);
-                switch (gestureData) {
-                    case DOUBLE_TAP:
+                String prefValue = getCMAStringPref(String.valueOf(gestureData));
+                Log.i(TAG, "Handling gesture: " + gestureData + " action: " + prefValue);
+                switch (prefValue) {
+                    case "wakeUp":
                         mPowerManager.wakeUpWithProximityCheck(SystemClock.uptimeMillis());
-                        doHapticFeedback();
                         break;
-                    case UNICODE_C:
+                    case "unlock":
+                        ensureKeyguardManager();
+                        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+                        mContext.sendBroadcastAsUser(new Intent(ACTION_DISMISS_KEYGUARD),
+                                UserHandle.CURRENT);
+                        mPowerManager.wakeUp(SystemClock.uptimeMillis());
+                        break;
+                    case "camera":
                         ensureKeyguardManager();
                         final String action;
                         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
@@ -187,48 +198,58 @@ public class KeyHandler implements DeviceKeyHandler {
                         mPowerManager.wakeUp(SystemClock.uptimeMillis());
                         Intent intent = new Intent(action, null);
                         startActivitySafely(intent);
-                        doHapticFeedback();
                         break;
-                    case UNICODE_Z:
+                    case "play":
                         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
-                        doHapticFeedback();
                         break;
-                    case SWIPE_Y_DOWN:
+                    case "flashlight":
                         ensureTorchManager();
                         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
                         mTorchManager.toggleTorch();
-                        doHapticFeedback();
                         break;
-                    case SWIPE_X_LEFT:
+                    case "prev":
                         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
-                        doHapticFeedback();
                         break;
-                    case SWIPE_X_RIGHT:
+                    case "next":
                         dispatchMediaKeyWithWakeLockToMediaSession(KeyEvent.KEYCODE_MEDIA_NEXT);
-                        doHapticFeedback();
                         break;
-                    case UNICODE_S:
-                    case UNICODE_W:
-                    case UNICODE_M:
-                        int zenMode = Global.ZEN_MODE_OFF;
-                        if (gestureData == UNICODE_M) {
-                            zenMode = Global.ZEN_MODE_NO_INTERRUPTIONS;
-                        } else if (gestureData == UNICODE_S) {
-                            zenMode = Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
-                        }
+                    case "doNotDisturb":
                         Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE,
-                                zenMode);
-                        if (mNotificationSliderVibrate) {
-                            doHapticFeedback();
+                                Global.ZEN_MODE_NO_INTERRUPTIONS);
+                        break;
+                    case "normal":
+                        Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE,
+                                Global.ZEN_MODE_OFF);
+                        break;
+                    case "mute":
+                        Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE,
+                                Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
+                        break;
+                    default:
+                        if (prefValue.startsWith("launch$")) {
+                            String packageName = prefValue.replace("launch$", "");
+                            ensureKeyguardManager();
+                            mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+                            if (!mKeyguardManager.isKeyguardSecure() && mKeyguardManager.isKeyguardLocked()) {
+                                mContext.sendBroadcastAsUser(new Intent(ACTION_DISMISS_KEYGUARD),
+                                        UserHandle.CURRENT);
+                            }
+                            mPowerManager.wakeUp(SystemClock.uptimeMillis());
+                            Intent appIntent = mPackageManager.getLaunchIntentForPackage(packageName);
+                            startActivitySafely(appIntent);
                         }
-                        mNotificationSliderVibrate = true;
                         break;
                 }
+                doHapticFeedback();
             } catch (Exception e) {
                 Log.e(TAG, "Gesture EventHandler", e);
-                //e.printStackTrace();
             }
         }
+    }
+
+    private void setZenMode(int zenMode) {
+        Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE,
+                zenMode);
     }
 
     public boolean handleKeyEvent(KeyEvent event) {
@@ -236,39 +257,37 @@ public class KeyHandler implements DeviceKeyHandler {
 
         switch (event.getScanCode()) {
             case 102: // Home button event
-                if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
-                        && event.getAction() == KeyEvent.ACTION_DOWN
-                        && isLastPressHomeButton) {
-                    isHandled = true;
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && isLastPressHomeButton) {
+                        isHandled = true;
+                    }
+                    isLastPressHomeButton = mPowerManager.isInteractive()
+                            && event.getKeyCode() == KeyEvent.KEYCODE_HOME;
                 }
-                isLastPressHomeButton = event.getKeyCode() == KeyEvent.KEYCODE_HOME;
                 break;
             case 195: // Gesture event
-                if (event.getAction() == KeyEvent.ACTION_UP)
-                    return true;
+                isHandled = true;
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    try {
+                        int gestureData = readGestureData();
 
-                try {
-                    int gestureData = readGestureData();
-                    if (gestureData == 0)
-                        return true;
-
-                    if (!mEventHandler.hasMessages(GESTURE_REQUEST)) {
-                        Message msg = getGestureMessage(gestureData);
-                        boolean defaultProximity = mContext.getResources().getBoolean(
-                                com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-                        boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
-                                Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
-                        if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
-                            mEventHandler.sendMessageDelayed(msg, mProximityTimeOut);
-                            processEvent(event);
-                        } else {
-                            mEventHandler.sendMessage(msg);
+                        if (gestureData != 0 && !mEventHandler.hasMessages(GESTURE_REQUEST)) {
+                            Message msg = getGestureMessage(gestureData);
+                            boolean defaultProximity = mContext.getResources().getBoolean(
+                                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+                            boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                                    Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
+                            if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
+                                mEventHandler.sendMessageDelayed(msg, mProximityTimeOut);
+                                processEvent(event);
+                            } else {
+                                mEventHandler.sendMessage(msg);
+                            }
                         }
+                    } catch (Exception e) {
+                        Log.e(TAG, "Gesture handling failed.", e);
+                        isHandled = false;
                     }
-                    return true;
-                } catch (Exception e) {
-                    // Gesture data read failed
-                    return false;
                 }
         }
         return isHandled;
@@ -342,6 +361,12 @@ public class KeyHandler implements DeviceKeyHandler {
         SharedPreferences cmaPrefs = null;
         cmaPrefs = cmaContext.getSharedPreferences("com.cyanogenmod.settings.device_preferences", Context.MODE_MULTI_PROCESS);
         return cmaPrefs.getBoolean(prefKey, defVal);
+    }
+
+    private String getCMAStringPref(String prefKey) {
+        SharedPreferences cmaPrefs = null;
+        cmaPrefs = cmaContext.getSharedPreferences("com.cyanogenmod.settings.device_preferences", Context.MODE_MULTI_PROCESS);
+        return cmaPrefs.getString(prefKey, "disabled");
     }
 
     private void doHapticFeedback() {
