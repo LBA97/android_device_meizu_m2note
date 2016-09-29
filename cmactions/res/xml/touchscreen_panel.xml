@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2015 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License"
@@ -16,74 +15,60 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="@string/touchscreen_control_gesture_head" >
+    <PreferenceCategory android:title="@string/touchscreen_control_gesture_head">
 
-    <SwitchPreference
-        android:key="touchscreen_gesture_control"
-        android:title="@string/touchscreen_control_gesture_title" />
+        <SwitchPreference
+            android:key="touchscreen_gesture_control"
+            android:title="@string/touchscreen_control_gesture_title" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="category_gestures"
-        android:title="@string/gesture_category_title" >
+        android:title="@string/gesture_category_title">
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_dtap"
-            android:title="@string/touchscreen_dtp_gesture_title"
-            android:summary="@string/touchscreen_dtp_gesture_summary" />
+        <ListPreference
+            android:key="160"
+            android:title="@string/touchscreen_dtp_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_c"
-            android:title="@string/touchscreen_c_gesture_title"
-            android:summary="@string/touchscreen_c_gesture_summary" />
+        <ListPreference
+            android:key="176"
+            android:title="@string/touchscreen_ltr_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_z"
-            android:title="@string/touchscreen_z_gesture_title"
-            android:summary="@string/touchscreen_z_gesture_summary" />
+        <ListPreference
+            android:key="177"
+            android:title="@string/touchscreen_gtr_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_ltr"
-            android:title="@string/touchscreen_ltr_gesture_title"
-            android:summary="@string/touchscreen_ltr_gesture_summary" />
+        <ListPreference
+            android:key="179"
+            android:title="@string/touchscreen_ydown_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_gtr"
-            android:title="@string/touchscreen_gtr_gesture_title"
-            android:summary="@string/touchscreen_gtr_gesture_summary" />
+        <ListPreference
+            android:key="193"
+            android:title="@string/touchscreen_c_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_s"
-            android:title="@string/touchscreen_s_gesture_title"
-            android:summary="@string/touchscreen_s_gesture_summary" />
+        <ListPreference
+            android:key="202"
+            android:title="@string/touchscreen_z_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_w"
-            android:title="@string/touchscreen_w_gesture_title"
-            android:summary="@string/touchscreen_w_gesture_summary" />
+        <ListPreference
+            android:key="194"
+            android:title="@string/touchscreen_w_gesture_title" />
 
-        <SwitchPreference
-            android:key="touchscreen_gesture_m"
-            android:title="@string/touchscreen_m_gesture_title"
-            android:summary="@string/touchscreen_m_gesture_summary" />
-
-        <SwitchPreference
-            android:key="touchscreen_gesture_ydown"
-            android:title="@string/touchscreen_ydown_gesture_title"
-            android:summary="@string/touchscreen_ydown_gesture_summary" />
+        <ListPreference
+            android:key="195"
+            android:title="@string/touchscreen_m_gesture_title" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/touchscreen_extras">
+    <PreferenceCategory android:title="@string/touchscreen_extras">
 
         <SwitchPreference
             android:key="touchscreen_gesture_haptic_feedback"
-            android:title="@string/haptic_feedback"
-            android:summary="@string/haptic_feedback_summary" />
+            android:summary="@string/haptic_feedback_summary"
+            android:title="@string/haptic_feedback" />
 
     </PreferenceCategory>
 
 </PreferenceScreen>
+
