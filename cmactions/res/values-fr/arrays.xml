@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gesture_action_titles">
+        <item>Désactivé</item>
+        <item>Réveiller</item>
+        <item>Dévérouiller</item>
+        <item>Lecture/Pause</item>
+        <item>Piste suivante</item>
+        <item>Piste précédente</item>
+        <item>Appareil photo</item>
+        <item>Lampe de poche</item>
+        <item>Do Not Disturb Mode</item>
+        <item>Normal Mode</item>
+        <item>Mute Mode</item>
+    </string-array>
+
+    <string-array name="gesture_action_values">
+        <item>disabled</item>
+        <item>wakeUp</item>
+        <item>unlock</item>
+        <item>play</item>
+        <item>next</item>
+        <item>prev</item>
+        <item>camera</item>
+        <item>flashlight</item>
+        <item>doNotDisturb</item>
+        <item>normal</item>
+        <item>mute</item>
+    </string-array>
+
+</resources>
