@@ -26,12 +26,10 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
-ro.sys.usb.storage.type=mtp
-# enable otg safe removal, thanks divis1969
-# persist.sys.isUsbOtgEnabled=true
+ro.sys.usb.storage.type=mtp,mass_storage
 
 # USB BICR function
-ro.sys.usb.bicr=no
+ro.sys.usb.bicr=yes
 
 # USB Charge only function
 ro.sys.usb.charging.only=no
@@ -45,6 +43,8 @@ ro.zygote.preload.enable=0
 ro.kernel.zio=38,108,105,16
 ro.kernel.android.checkjni=0
 dalvik.vm.checkjni=false
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+
 #ro.kernel.qemu=1
 #ro.kernel.qemu.gles=0
 #ro.boot.selinux=disable
@@ -79,6 +79,10 @@ ril.external.md=0
 
 persist.call_recording.enabled=true
 persist.call_recording.src=1
+persist.sys.log-main.enable=0
+persist.sys.log-system.enable=0
+persist.sys.log-events.enable=0
+persist.sys.log-radio.enable=0
 keyguard.no_require_sim=true
 persist.sys.keyguard_intercept=true
 persist.sys.disable_blur_view=true
@@ -176,8 +180,8 @@ service.wcn.driver.ready=no
 ro.mtk_hetcomm_support=1
 
 persist.dtmf.volume=90
+persist.call.waiting.volume=70
 net.bt.name=Android
 
-
 # OTA
-# cm.updater.uri=https://ota.cm.mkoas.de/api
+# cm.updater.uri=
