@@ -18,7 +18,7 @@
 
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Управление жестами</string>
-    <string name="screen_gestures_panel_summary">Use gestures while the screen is off</string>
+    <string name="screen_gestures_panel_summary">Использовать жесты, когда экран выключен</string>
 
     <string name="touchscreen_control_gesture_head">Жесты выключенного экрана</string>
     <string name="touchscreen_control_gesture_title">Включить управление жестами</string>
@@ -28,20 +28,22 @@
     <string name="touchscreen_c_gesture_title">Нарисуйте \"C\"</string>
     <string name="touchscreen_c_gesture_summary">Нарисуйте \"C\" для активации камеры</string>
     <string name="touchscreen_z_gesture_title">Нарисуйте \"Z\"</string>
-    <string name="touchscreen_z_gesture_summary">Нарисуйте \"Z\" для Play/Pause</string>
-    <string name="touchscreen_ltr_gesture_title">Музыка</string>
-    <string name="touchscreen_ltr_gesture_summary">Черта влево - предыдущий трек</string>
-    <string name="touchscreen_gtr_gesture_title">Музыка</string>
-    <string name="touchscreen_gtr_gesture_summary">Черта вправо - следующий трек</string>
+    <string name="touchscreen_z_gesture_summary">Нарисуйте \"Z\" для Воспроизв./Паузы</string>
+    <string name="touchscreen_ltr_gesture_title">Свайп влево</string>
+    <string name="touchscreen_ltr_gesture_summary">Свайп влево - предыдущий трек</string>
+    <string name="touchscreen_gtr_gesture_title">Свайп вправо</string>
+    <string name="touchscreen_gtr_gesture_summary">Свайп вправо - следующий трек</string>
     <string name="touchscreen_s_gesture_title">Нарисуйте \"S\"</string>
     <string name="touchscreen_s_gesture_summary">Нарисуйте \"S\" для активации режима \"Не беспокоить\"</string>
     <string name="touchscreen_w_gesture_title">Нарисуйте \"W\"</string>
     <string name="touchscreen_w_gesture_summary">Нарисуйте \"W\" для активации нормального режима</string>
     <string name="touchscreen_m_gesture_title">Нарисуйте \"M\"</string>
     <string name="touchscreen_m_gesture_summary">Нарисуйте \"M\" для активации режима \"Без звука\"</string>
-    <string name="touchscreen_ydown_gesture_title">Фонарик</string>
-    <string name="touchscreen_ydown_gesture_summary">Нарисуйте вертикальную черту для активации фонарика</string>
-
+    <string name="touchscreen_ydown_gesture_title">Нарисуйте черту вниз</string>
+    <string name="touchscreen_ydown_gesture_summary">Нарисуйте вертикальную черту вниз для активации фонарика</string>
+    <string name="touchscreen_yup_gesture_title">Нарисуйте черту вверх</string>
+    <string name="touchscreen_yup_gesture_summary">Нарисуйте вертикальную черту вверх для активации фонарика</string>
+     
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Дополнительные настройки</string>
     <string name="haptic_feedback">Вибрация</string>
