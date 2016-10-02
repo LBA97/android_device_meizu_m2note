@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="gesture_action_titles">
-        <item>Disabled</item>
-        <item>Wake Up</item>
-        <item>Unlock</item>
-        <item>Play/Pause</item>
-        <item>Next Song</item>
-        <item>Previous Song</item>
-        <item>Launch Camera</item>
-        <item>Toggle Flashlight</item>
-        <item>Do Not Disturb Mode</item>
-        <item>Normal Mode</item>
-        <item>Mute Mode</item>
+        <item>Выключено</item>
+        <item>Будить</item>
+        <item>Разблокировать</item>
+        <item>Воспризв./Пауза</item>
+        <item>Следующий Трек</item>
+        <item>Предыдущий Трек</item>
+        <item>Запустить камеру</item>
+        <item>Настройка вспышки</item>
+        <item>Режим Не беспокоить</item>
+        <item>Обычный режим</item>
+        <item>Беззвучный режим</item>
     </string-array>
 
     <string-array name="gesture_action_values">
