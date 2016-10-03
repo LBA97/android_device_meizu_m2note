@@ -41,8 +41,8 @@
     <string name="touchscreen_m_gesture_summary">Dessinez un \"M\" pour activer le mode \"Silencieux\"</string>
     <string name="touchscreen_ydown_gesture_title">Tracez une ligne vers le bas</string>
     <string name="touchscreen_ydown_gesture_summary">Tracez une ligne verticale vers le bas pour activer la Torche</string>
-    <string name="touchscreen_ydown_gesture_title">Tracez une ligne vers le haut</string>
-    <string name="touchscreen_ydown_gesture_summary">Tracez une ligne verticale vers le haut pour activer la Torche</string>
+    <string name="touchscreen_yup_gesture_title">Tracez une ligne vers le haut</string>
+    <string name="touchscreen_yup_gesture_summary">Tracez une ligne verticale vers le haut pour activer la Torche</string>
 
 
     <!-- haptic feedback  -->
