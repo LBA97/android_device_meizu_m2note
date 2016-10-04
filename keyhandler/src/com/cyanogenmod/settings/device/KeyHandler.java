@@ -169,10 +169,10 @@ public class KeyHandler implements DeviceKeyHandler {
         @Override
         public void handleMessage(Message msg) {
             try {
-                int zenMode = 0;
+                boolean gestureHandled = true;
                 int gestureData = (int) msg.obj;
-                String prefValue = getCMAStringPref(String.valueOf(gestureData));
-                Log.i(TAG, "Handling gesture: " + gestureData + " action: " + prefValue);
+                String prefValue = getCMAStringPref(String.valueOf(gestureData) + "_action");
+                Log.i(TAG, "Handling gesture: " + gestureData + " with action: " + prefValue);
                 switch (prefValue) {
                     case "wakeUp":
                         mPowerManager.wakeUpWithProximityCheck(SystemClock.uptimeMillis());
@@ -237,23 +237,22 @@ public class KeyHandler implements DeviceKeyHandler {
                             mPowerManager.wakeUp(SystemClock.uptimeMillis());
                             Intent appIntent = mPackageManager.getLaunchIntentForPackage(packageName);
                             startActivitySafely(appIntent);
+                        } else {
+                            gestureHandled = false;
                         }
                         break;
                 }
-                doHapticFeedback();
+                if (gestureHandled)
+                    doHapticFeedback();
             } catch (Exception e) {
                 Log.e(TAG, "Gesture EventHandler", e);
             }
         }
     }
 
-    private void setZenMode(int zenMode) {
-        Global.putInt(mContext.getContentResolver(), Global.ZEN_MODE,
-                zenMode);
-    }
-
     public boolean handleKeyEvent(KeyEvent event) {
         boolean isHandled = false;
+
 
         switch (event.getScanCode()) {
             case 102: // Home button event
@@ -401,3 +400,4 @@ public class KeyHandler implements DeviceKeyHandler {
         return Integer.valueOf(readSingleLine(f));
     }
 }
+

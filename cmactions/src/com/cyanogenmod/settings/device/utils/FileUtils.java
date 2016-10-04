@@ -75,6 +75,11 @@ public final class FileUtils {
         return true;
     }
 
+    /**
+     * Writes the given value as bytes into the given file
+     *
+     * @return true on success, false on failure
+     */
     public static boolean writeAsByte(String fileName, int value) {
         byte[] bytes = ByteBuffer.allocate(4).putInt(value).array();
         try {
@@ -86,7 +91,25 @@ public final class FileUtils {
             Log.e(TAG, "Could not write to file " + fileName, e);
             return false;
         }
+        return true;
+    }
 
+    /**
+     * Writes the given byte array into the given file
+     *
+     * @return true on success, false on failure
+     */
+    public static boolean writeByteArray(String fileName, byte[] bytes) {
+        try {
+            FileOutputStream fos = new FileOutputStream(fileName);
+            fos.write(bytes);
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+            Log.e(TAG, "Could not write to file " + fileName, e);
+            return false;
+        }
         return true;
     }
 }
+
