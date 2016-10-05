@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2013-2014 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,30 +22,38 @@
     <string name="touchscreen_control_gesture_head">Gestes écran éteint</string>
     <string name="touchscreen_control_gesture_title">Activer les Gestes</string>
     <string name="gesture_category_title">Gestes disponible</string>
-    <string name="touchscreen_dtp_gesture_title">Double Tape</string>
-    <string name="touchscreen_dtp_gesture_summary">Tapez deux fois pour réveiller l\'appareil</string>
-    <string name="touchscreen_c_gesture_title">Dessinez un \"C\"</string>
-    <string name="touchscreen_c_gesture_summary">Dessinez un \"C\" pour activer l\'appareil photo</string>
-    <string name="touchscreen_z_gesture_title">Dessinez un \"Z\"</string>
-    <string name="touchscreen_z_gesture_summary">Dessinez un \"Z\" pour Lecture/Pause</string>
-    <string name="touchscreen_ltr_gesture_title">Glissez vers la gauche</string>
-    <string name="touchscreen_ltr_gesture_summary">Glissez vers la gauche pour Piste Précédente</string>
-    <string name="touchscreen_gtr_gesture_title">Glissez vers la droite</string>
-    <string name="touchscreen_gtr_gesture_summary">Glissez vers la droite pour Piste Suivante</string>
-    <string name="touchscreen_s_gesture_title">Dessinez un \"S\"</string>
-    <string name="touchscreen_s_gesture_summary">Dessinez un \"S\" pour activer le mode \"Do Not Disturb\"</string>
-    <string name="touchscreen_w_gesture_title">Dessinez un \"W\"</string>
-    <string name="touchscreen_w_gesture_summary">Dessinez un \"W\" pour activer le mode \"Normal\"</string>
-    <string name="touchscreen_m_gesture_title">Dessinez un \"M\"</string>
-    <string name="touchscreen_m_gesture_summary">Dessinez un \"M\" pour activer le mode \"Silencieux\"</string>
-    <string name="touchscreen_ydown_gesture_title">Tracez une ligne vers le bas</string>
-    <string name="touchscreen_ydown_gesture_summary">Tracez une ligne verticale vers le bas pour activer la Torche</string>
-    <string name="touchscreen_ydown_gesture_title">Tracez une ligne vers le haut</string>
-    <string name="touchscreen_ydown_gesture_summary">Tracez une ligne verticale vers le haut pour activer la Torche</string>
 
+    <string name="touchscreen_dtp_gesture_title">Double Tape</string>
+    <string name="touchscreen_x_left_gesture_title">Glissez vers la gauche</string>
+    <string name="touchscreen_x_right_gesture_title">Glissez vers la droite</string>
+    <string name="touchscreen_y_down_gesture_title">Tracez une ligne vers le bas</string>
+    <string name="touchscreen_y_up_gesture_title">Swipe Up</string>
+
+    <string name="touchscreen_c_gesture_title">Dessinez \"c\"</string>
+    <string name="touchscreen_z_gesture_title">Dessinez \"z\"</string>
+    <string name="touchscreen_s_gesture_title">Dessinez \"s\"</string>
+    <string name="touchscreen_w_gesture_title">Dessinez \"w\"</string>
+    <string name="touchscreen_o_gesture_title">Dessinez \"o\"</string>
+    <string name="touchscreen_v_gesture_title">Dessinez \"v\"</string>
+    <string name="touchscreen_e_gesture_title">Dessinez \"e\"</string>
+    <string name="touchscreen_m_gesture_title">Dessinez \"m\"</string>
 
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Extras</string>
     <string name="haptic_feedback">Retour Haptique</string>
     <string name="haptic_feedback_summary">Vibrer quand un geste est détecté</string>
+
+    <!-- gesture actions  -->
+    <string name="disabled">Désactivé</string>
+    <string name="wakeUp">Réveiller</string>
+    <string name="unlock">Dévérouiller</string>
+    <string name="play">Lecture/Pause</string>
+    <string name="next">Piste suivante</string>
+    <string name="prev">Piste précédente</string>
+    <string name="camera">Appareil photo</string>
+    <string name="flashlight">Lampe de poche</string>
+    <string name="doNotDisturbMode">Do Not Disturb Mode</string>
+    <string name="normalMode">Normal Mode</string>
+    <string name="muteMode">Mute Mode</string>
+
 </resources>

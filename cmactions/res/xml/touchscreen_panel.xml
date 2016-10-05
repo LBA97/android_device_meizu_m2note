@@ -24,41 +24,87 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:dependency="touchscreen_gesture_control"
         android:key="category_gestures"
         android:title="@string/gesture_category_title">
 
-        <ListPreference
-            android:key="160"
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="wakeUp"
+            android:key="160_enabled"
+            android:summaryOff=" "
             android:title="@string/touchscreen_dtp_gesture_title" />
 
-        <ListPreference
-            android:key="176"
-            android:title="@string/touchscreen_ltr_gesture_title" />
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="prev"
+            android:key="176_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_x_left_gesture_title" />
 
-        <ListPreference
-            android:key="177"
-            android:title="@string/touchscreen_gtr_gesture_title" />
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="next"
+            android:key="177_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_x_right_gesture_title" />
 
-        <ListPreference
-            android:key="179"
-            android:title="@string/touchscreen_ydown_gesture_title" />
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="unlock"
+            android:key="178_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_y_up_gesture_title" />
 
-        <ListPreference
-            android:key="193"
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="flashlight"
+            android:key="179_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_y_down_gesture_title" />
+
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="camera"
+            android:key="193_enabled"
+            android:summaryOff=" "
             android:title="@string/touchscreen_c_gesture_title" />
 
-        <ListPreference
-            android:key="202"
-            android:title="@string/touchscreen_z_gesture_title" />
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="wakeUp"
+            android:key="192_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_e_gesture_title" />
 
-        <ListPreference
-            android:key="194"
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="normalMode"
+            android:key="194_enabled"
+            android:summaryOff=" "
             android:title="@string/touchscreen_w_gesture_title" />
 
-        <ListPreference
-            android:key="195"
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="muteMode"
+            android:key="195_enabled"
+            android:summaryOff=" "
             android:title="@string/touchscreen_m_gesture_title" />
 
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="wakeUp"
+            android:key="196_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_o_gesture_title" />
+
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="muteMode"
+            android:key="197_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_s_gesture_title" />
+
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="wakeUp"
+            android:key="198_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_v_gesture_title" />
+
+        <com.cyanogenmod.settings.device.SwitchPlusPreference
+            android:defaultValue="doNotDisturbMode"
+            android:key="202_enabled"
+            android:summaryOff=" "
+            android:title="@string/touchscreen_z_gesture_title" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/touchscreen_extras">

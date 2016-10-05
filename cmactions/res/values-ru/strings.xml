@@ -18,35 +18,43 @@
 
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Управление жестами</string>
-    <string name="screen_gestures_panel_summary">Использовать жесты, когда экран выключен</string>
+    <string name="screen_gestures_panel_summary">Use gestures while the screen is off</string>
 
     <string name="touchscreen_control_gesture_head">Жесты выключенного экрана</string>
     <string name="touchscreen_control_gesture_title">Включить управление жестами</string>
     <string name="gesture_category_title">Доступные жесты</string>
+
     <string name="touchscreen_dtp_gesture_title">Двойной тап</string>
-    <string name="touchscreen_dtp_gesture_summary">Пробуждение двойным тапом</string>
-    <string name="touchscreen_c_gesture_title">Нарисуйте \"C\"</string>
-    <string name="touchscreen_c_gesture_summary">Нарисуйте \"C\" для активации камеры</string>
-    <string name="touchscreen_z_gesture_title">Нарисуйте \"Z\"</string>
-    <string name="touchscreen_z_gesture_summary">Нарисуйте \"Z\" для Воспроизв./Паузы</string>
-    <string name="touchscreen_ltr_gesture_title">Свайп влево</string>
-    <string name="touchscreen_ltr_gesture_summary">Свайп влево - предыдущий трек</string>
-    <string name="touchscreen_gtr_gesture_title">Свайп вправо</string>
-    <string name="touchscreen_gtr_gesture_summary">Свайп вправо - следующий трек</string>
-    <string name="touchscreen_s_gesture_title">Нарисуйте \"S\"</string>
-    <string name="touchscreen_s_gesture_summary">Нарисуйте \"S\" для активации режима \"Не беспокоить\"</string>
-    <string name="touchscreen_w_gesture_title">Нарисуйте \"W\"</string>
-    <string name="touchscreen_w_gesture_summary">Нарисуйте \"W\" для активации нормального режима</string>
-    <string name="touchscreen_m_gesture_title">Нарисуйте \"M\"</string>
-    <string name="touchscreen_m_gesture_summary">Нарисуйте \"M\" для активации режима \"Без звука\"</string>
-    <string name="touchscreen_ydown_gesture_title">Нарисуйте черту вниз</string>
-    <string name="touchscreen_ydown_gesture_summary">Нарисуйте вертикальную черту вниз для активации фонарика</string>
-    <string name="touchscreen_yup_gesture_title">Нарисуйте черту вверх</string>
-    <string name="touchscreen_yup_gesture_summary">Нарисуйте вертикальную черту вверх для активации фонарика</string>
-     
+    <string name="touchscreen_x_left_gesture_title">Музыка</string>
+    <string name="touchscreen_x_right_gesture_title">Музыка</string>
+    <string name="touchscreen_y_down_gesture_title">Фонарик</string>
+    <string name="touchscreen_y_up_gesture_title">Swipe Up</string>
+
+    <string name="touchscreen_c_gesture_title">Нарисуйте \"c\"</string>
+    <string name="touchscreen_z_gesture_title">Нарисуйте \"z\"</string>
+    <string name="touchscreen_s_gesture_title">Нарисуйте \"s\"</string>
+    <string name="touchscreen_w_gesture_title">Нарисуйте \"w\"</string>
+    <string name="touchscreen_o_gesture_title">Нарисуйте \"o\"</string>
+    <string name="touchscreen_v_gesture_title">Нарисуйте \"v\"</string>
+    <string name="touchscreen_e_gesture_title">Нарисуйте \"e\"</string>
+    <string name="touchscreen_m_gesture_title">Нарисуйте \"m\"</string>
+
     <!-- haptic feedback  -->
     <string name="touchscreen_extras">Дополнительные настройки</string>
     <string name="haptic_feedback">Вибрация</string>
     <string name="haptic_feedback_summary">Использовать вбирацию при обработке жеста</string>
+
+    <!-- gesture actions  -->
+    <string name="disabled">Выключено</string>
+    <string name="wakeUp">Будить</string>
+    <string name="unlock">Разблокировать</string>
+    <string name="play">Воспризв./Пауза</string>
+    <string name="next">Следующий Трек</string>
+    <string name="prev">Предыдущий Трек</string>
+    <string name="camera">Запустить камеру</string>
+    <string name="flashlight">Настройка вспышки</string>
+    <string name="doNotDisturbMode">Обычный режим</string>
+    <string name="normalMode">Обычный режим</string>
+    <string name="muteMode">Беззвучный режим</string>
 
 </resources>
