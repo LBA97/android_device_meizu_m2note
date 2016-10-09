@@ -18,17 +18,17 @@
 
     <!-- Gesture shortcuts -->
     <string name="screen_gestures_panel_title">Управление жестами</string>
-    <string name="screen_gestures_panel_summary">Use gestures while the screen is off</string>
+    <string name="screen_gestures_panel_summary">Использовать жесты, когда экран выключен</string>
 
     <string name="touchscreen_control_gesture_head">Жесты выключенного экрана</string>
     <string name="touchscreen_control_gesture_title">Включить управление жестами</string>
     <string name="gesture_category_title">Доступные жесты</string>
 
     <string name="touchscreen_dtp_gesture_title">Двойной тап</string>
-    <string name="touchscreen_x_left_gesture_title">Музыка</string>
-    <string name="touchscreen_x_right_gesture_title">Музыка</string>
-    <string name="touchscreen_y_down_gesture_title">Фонарик</string>
-    <string name="touchscreen_y_up_gesture_title">Swipe Up</string>
+    <string name="touchscreen_x_left_gesture_title">Проведите влево</string>
+    <string name="touchscreen_x_right_gesture_title">Проведите вправо</string>
+    <string name="touchscreen_y_down_gesture_title">Проведите вниз</string>
+    <string name="touchscreen_y_up_gesture_title">Проведите вверх</string>
 
     <string name="touchscreen_c_gesture_title">Нарисуйте \"c\"</string>
     <string name="touchscreen_z_gesture_title">Нарисуйте \"z\"</string>
