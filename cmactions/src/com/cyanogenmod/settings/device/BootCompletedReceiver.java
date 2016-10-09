@@ -32,6 +32,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         Log.d(TAG, "Booting");
         enableComponent(context, TouchscreenGestureSettings.class.getName());
+        GestureController.updateGestureControl(context);
     }
 
     private void enableComponent(Context context, String component) {
