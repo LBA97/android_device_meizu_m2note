@@ -26,8 +26,8 @@
     <string name="touchscreen_dtp_gesture_title">Double Tape</string>
     <string name="touchscreen_x_left_gesture_title">Glissez vers la gauche</string>
     <string name="touchscreen_x_right_gesture_title">Glissez vers la droite</string>
-    <string name="touchscreen_y_down_gesture_title">Tracez une ligne vers le bas</string>
-    <string name="touchscreen_y_up_gesture_title">Swipe Up</string>
+    <string name="touchscreen_y_down_gesture_title">Glissez vers le bas</string>
+    <string name="touchscreen_y_up_gesture_title">Glissez vers le haut</string>
 
     <string name="touchscreen_c_gesture_title">Dessinez \"c\"</string>
     <string name="touchscreen_z_gesture_title">Dessinez \"z\"</string>
