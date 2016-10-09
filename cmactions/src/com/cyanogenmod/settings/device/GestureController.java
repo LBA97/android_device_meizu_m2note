@@ -76,22 +76,6 @@ public class GestureController {
         keysToMasks.put(UNICODE_Z, 0x400000);
     }
 
-    private static SharedPreferences.OnSharedPreferenceChangeListener mPrefListener;
-
-    public GestureController(final Context context) {
-        updateGestureControl(context);
-
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        mPrefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                updateGestureControl(context);
-            }
-        };
-        sharedPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
-
-    }
-
     public static void updateGestureControl(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (sharedPreferences.getBoolean(TOUCHSCREEN_GESTURE_CONTROL_KEY, false)) {
